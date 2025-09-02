@@ -97,8 +97,8 @@ if __name__ == "__main__":
     for j in range(3):
         img = t2i(model, args.size, t, uc, sampler, step=50, scale=10, batch_size=batch_size, ddim_eta=0.0, 
                 dtype=dtype, device=device, camera=camera, num_frames=args.num_frames)
-        print(img.shape)
-            
+        for k in range(len(img)):
+            print(img[k])
         img = np.concatenate(img, 1)
         images.append(img)
     images = np.concatenate(images, 0)
